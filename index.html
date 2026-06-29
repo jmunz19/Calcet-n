@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html>
 <head>
@@ -5,20 +6,18 @@
 <title>Privado</title>
 </head>
 
-<body>
+<body style="margin:0;background:black;color:white;font-family:Arial;">
 
-<div style="
+<!-- Pantalla de contraseña -->
+<div id="login" style="
 display:flex;
 flex-direction:column;
 justify-content:center;
 align-items:center;
 height:100vh;
-background:black;
-color:white;
-font-family:Arial;
 ">
 
-<h2>🔒 Video privado</h2>
+<h2>🔒 Videos privados</h2>
 
 <p>Contraseña requerida</p>
 
@@ -26,8 +25,33 @@ font-family:Arial;
 
 <br><br>
 
-<button onclick="ver()" style="padding:10px 20px;font-size:16px;z-index:9999;">
+<button onclick="ver()" style="padding:10px 20px;font-size:16px;">
 Entrar
+</button>
+
+</div>
+
+<!-- Menú de videos -->
+<div id="menu" style="
+display:none;
+text-align:center;
+padding-top:100px;
+">
+
+<h2>Elige un video</h2>
+
+<br>
+
+<button onclick="window.location.href='https://drive.google.com/file/d/1l3iOTGAaDTLspuVqNmZzDhGfe-JD9lJg/view?usp=drivesdk'"
+style="padding:15px 30px;font-size:18px;margin:10px;">
+🎥 Video 1
+</button>
+
+<br>
+
+<button onclick="window.location.href='https://drive.google.com/file/d/1l3iOTGAaDTLspuVqNmZzDhGfe-JD9lJg/view?usp=drivesdk'"
+style="padding:15px 30px;font-size:18px;margin:10px;">
+🎥 Video 2
 </button>
 
 </div>
@@ -37,9 +61,10 @@ function ver(){
   var pass = document.getElementById("clave").value;
 
   if(pass === "cocacola"){
-    window.location.href = "https://drive.google.com/file/d/1l3iOTGAaDTLspuVqNmZzDhGfe-JD9lJg/view?usp=drivesdk";
+    document.getElementById("login").style.display = "none";
+    document.getElementById("menu").style.display = "block";
   } else {
-    alert("Incorrecto");
+    alert("Contraseña incorrecta");
   }
 }
 </script>
