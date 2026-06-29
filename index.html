@@ -5,31 +5,38 @@
 <title>Privado</title>
 </head>
 
-<body style="
-text-align:center;
-font-family:Arial;
+<body>
+
+<div style="
+display:flex;
+flex-direction:column;
+justify-content:center;
+align-items:center;
+height:100vh;
 background:black;
 color:white;
-margin-top:80px;
+font-family:Arial;
 ">
 
 <h2>🔒 Video privado</h2>
 
-<p>Ingresa la contraseña</p>
+<p>Contraseña requerida</p>
 
-<input type="password" id="clave" style="padding:10px">
+<input id="clave" type="password" style="padding:10px">
 
 <br><br>
 
-<button onclick="ver()" style="padding:10px 20px;cursor:pointer">
+<button onclick="ver()" style="padding:10px 20px;font-size:16px;z-index:9999;">
 Entrar
 </button>
 
+</div>
+
 <script>
 function ver(){
-  var input = document.getElementById("clave").value;
+  var pass = document.getElementById("clave").value;
 
-  if(input === "cocacola"){
+  if(pass === "cocacola"){
     window.location.href = "https://drive.google.com/file/d/1l3iOTGAaDTLspuVqNmZzDhGfe-JD9lJg/view?usp=drivesdk";
   } else {
     alert("Incorrecto");
